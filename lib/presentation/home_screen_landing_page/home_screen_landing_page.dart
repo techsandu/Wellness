@@ -6,6 +6,13 @@ import 'package:sandeep_s_application1/widgets/app_bar/appbar_image.dart';
 import 'package:sandeep_s_application1/widgets/app_bar/custom_app_bar.dart';
 import 'package:sandeep_s_application1/widgets/custom_button.dart';
 import 'package:sandeep_s_application1/widgets/custom_icon_button.dart';
+import 'package:sandeep_s_application1/presentation/voice_game_screen/voice_game_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:sandeep_s_application1/core/app_export.dart';
+import 'package:sandeep_s_application1/widgets/custom_button.dart';
+import 'package:sandeep_s_application1/presentation/questionnaire_one_screen/questionnaire_one_screen.dart';
+import 'package:sandeep_s_application1/presentation/welcome_screen_option_eight_screen/welcome_screen_option_eight_screen.dart';
+
 
 class HomeScreenLandingPage extends StatelessWidget {
   @override
@@ -470,8 +477,9 @@ class HomeScreenLandingPage extends StatelessWidget {
                                                                     GestureDetector(
                                                                         onTap:
                                                                             () {
-                                                                          onTapTxtSeeallone(
-                                                                              context);
+                                                                              _navigateToNextScreen(context);
+                                                                          // onTapTxtSeeallone(
+                                                                          //     context);
                                                                         },
                                                                         child: Padding(
                                                                             padding:
@@ -846,5 +854,9 @@ class HomeScreenLandingPage extends StatelessWidget {
 
   onTapTxtSeeallone(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.voiceGameScreen);
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => VoiceGameScreen()));
   }
 }

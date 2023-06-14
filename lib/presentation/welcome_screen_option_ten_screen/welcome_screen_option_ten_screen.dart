@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sandeep_s_application1/core/app_export.dart';
 import 'package:sandeep_s_application1/widgets/custom_button.dart';
-
+import 'package:sandeep_s_application1/presentation/questionnaire_one_screen/questionnaire_one_screen.dart';
+import 'package:sandeep_s_application1/presentation/welcome_screen_option_eight_screen/welcome_screen_option_eight_screen.dart';
 class WelcomeScreenOptionTenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -70,6 +71,9 @@ class WelcomeScreenOptionTenScreen extends StatelessWidget {
                             top: 379,
                             right: 15,
                           ),
+                            onTap:(){
+                              _navigateToNextScreen(context);
+                            }
                         ),
                       ],
                     ),
@@ -81,5 +85,8 @@ class WelcomeScreenOptionTenScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => WelcomeScreenOptionEightScreen()));
   }
 }

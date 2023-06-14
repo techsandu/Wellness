@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sandeep_s_application1/core/app_export.dart';
 import 'package:sandeep_s_application1/widgets/custom_button.dart';
+import 'package:sandeep_s_application1/presentation/questionnaire_one_screen/questionnaire_one_screen.dart';
 
 class QuestionnaireScreen extends StatelessWidget {
   @override
@@ -187,12 +188,19 @@ class QuestionnaireScreen extends StatelessWidget {
                             CustomButton(
                                 text: "NEXT  >".toUpperCase(),
                                 margin: getMargin(
-                                    left: 28, top: 73, right: 28, bottom: 124))
+                                    left: 28, top: 73, right: 28, bottom: 124),
+                                onTap:(){
+                                  _navigateToNextScreen(context);
+                                }
+                            )
                           ])))
                     ]))));
   }
 
   onTapBehappier(BuildContext context) {
     Navigator.pushNamed(context, AppRoutes.questionnaireOneScreen);
+  }
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => QuestionnaireOneScreen()));
   }
 }
